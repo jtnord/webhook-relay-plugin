@@ -3,7 +3,7 @@
  */
 package org.jenkinsci.plugins.webhookrelay
 
-import kotlinx.coroutines.experimental.*
+import kotlinx.coroutines.*
 import javax.net.ssl.SSLContext
 import javax.net.ssl.SSLSocketFactory
 import java.net.URI
@@ -46,7 +46,7 @@ class WebsocketHandler (val relayURI: String) {
         listener = launch {
             while (true) {
                 listen(sslContext.socketFactory)
-                delay(5000)
+                //delay(5000)
                 LOGGER.warning("Unexpected end of listening, retrying ...")
             }
         }

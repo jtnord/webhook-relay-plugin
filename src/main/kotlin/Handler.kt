@@ -50,7 +50,7 @@ class WebsocketHandler (val relayURI: String) : CoroutineScope {
         listener = launch {
             while (true) {
                 listen(sslContext.socketFactory)
-                //delay(5000)
+                delay(5000)
                 LOGGER.warning("Unexpected end of listening, retrying ...")
             }
         }
